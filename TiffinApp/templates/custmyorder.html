@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en"><!-- Basic -->
+<head>
+    <style>
+        /* Add your custom CSS styles here */
+    
+    /* Add your custom CSS styles here */
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    table th {
+      background-color: rgb(245, 195, 59);
+      color: rgb(21, 2, 2);
+      padding: 10px;
+      text-align: left;
+    }
+    
+    table td {
+      background-color: rgb(230, 226, 218);
+      color: rgb(27, 18, 18);
+      padding: 10px;
+      
+    }
+    
+    table tr:nth-child(even) {
+      background-color: #e95a5a;
+    }
+    
+    table tr:hover {
+      background-color: #b0b2b6;
+    }
+    
+    table a {
+      display: inline-block;
+      color: rgba(241, 138, 21, 0.952);
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 3px;
+      transition: background-color 0.3s ease;
+    }
+    
+    table a:hover {
+      background-color: #f3c7c7;
+    }
+    </style>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">   
+   
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+     <!-- Site Metas -->
+    <title>Tiffin Service</title>  
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="/static/images/favicon.ico" type="/static/image/x-icon">
+    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">    
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/static/css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/custom.css">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+	<!-- Start header -->
+	<header class="top-navbar">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<img src="/static/images/logo1.png" alt="" />
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+				  <span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbars-rs-food">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="/UserReghome/">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="/uvcanteen/">Canteen</a></li>
+						<li class="nav-item"><a class="nav-link" href="/uvcanteenorder/">Requested Canteen</a></li>
+						<li class="nav-item"><a class="nav-link" href="/custmyorder/">My Orders</a></li>
+                        <li class="nav-item "><a class="nav-link" href="/login/">LogOut</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- End header -->
+	
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1> My order</h1>
+          <a href="/feedback/" style="float:right;"><button>Feedback</button></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start Menu -->
+	<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<!-- <div class="col-lg-12"> -->
+					<!-- <div class="heading-title text-center"> -->
+						<!-- <h2>Special Menu</h2> -->
+                        <!-- <div class="row"> -->
+                            <!-- <div class="col-lg-6">
+                               
+                            </div> -->
+                            <div class="col-lg-6">
+                                <table border="1" align="center">
+									<h1 align="center" style="background-color: yellowgreen;">My Order</h1>
+                                    <tr>
+                                        
+                                      <th>date</th>
+                                      <th>Canteen</th>
+                                      <th>Dish Type</th>
+                                      <th>Deliver Details</th>
+                                      <th>Status</th>
+                                      </tr>
+                                      {% for i in cr %}
+                                      <tr>
+                                          <td>{{ i.date }}</td>
+                                          <td>{{ i.cname }},
+                                              {{ i.addr }},
+                                              {{ i.city }},
+                                              {{ i.district }},
+                                              {{ i.pin }},
+                                              {{ i.phone }},
+                                              {{ i.type }}</td>
+                                          <td>{{ i.dtype }}</td>
+                                          <td>
+                                              <p>Breakfast: {{ i.adddress1 }}</p>
+                                              <p>Lunch: {{ i.adddress2 }}</p>
+                                              <p>Dinner: {{ i.adddress3 }}</p>
+                                          </td>
+                                          <td>{{ i.status }}</td>
+                                      </tr>
+                                      {% endfor %}
+                                      </table>
+                            </div>
+                       
+					</div>
+				</div>
+
+			</div>
+			
+			
+				
+	</div>
+	<!-- End Menu -->
+
+	
+	<!-- Start Footer -->
+	<footer class="footer-area bg-f">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-md-6">
+					
+			</div>
+		</div>
+		
+	</footer>
+	<!-- End Footer -->
+	
+	<a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+	<!-- ALL JS FILES -->
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/popper.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+    <!-- ALL PLUGINS -->
+	<script src="/static/js/jquery.superslides.min.js"></script>
+	<script src="/static/js/images-loded.min.js"></script>
+	<script src="/static/js/isotope.min.js"></script>
+	<script src="/static/js/baguetteBox.min.js"></script>
+	<script src="/static/js/form-validator.min.js"></script>
+    <script src="/static/js/contact-form-script.js"></script>
+    <script src="/static/js/custom.js"></script>
+</body>
+</html>
+            
